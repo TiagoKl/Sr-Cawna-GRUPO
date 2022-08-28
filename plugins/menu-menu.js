@@ -1,174 +1,113 @@
-import { xpRange } from '../lib/levelling.js'
-const { levelling } = '../lib/levelling.js'
-import PhoneNumber from 'awesome-phonenumber'
-import { promises } from 'fs'
-import { join } from 'path'
-let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) => {
-try {
-let vn = './media/menu.mp3'
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
+let fs = require('fs')
+let path = require('path')
+let { MessageType } = require('@adiwajshing/baileys')
+let PhoneNumber = require('awesome-phonenumber')
+let levelling = require('../lib/levelling')
+let handler = async (m, { conn, usedPrefix }) => {
+let user = global.db.data.users[m.sender]
 let pp = './Menu2.jpg'
-let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-let { exp, limit, level, role } = global.db.data.users[m.sender]
-let { min, xp, max } = xpRange(level, global.multiplier)
-let name = await conn.getName(m.sender)
-let d = new Date(new Date + 3600000)
-let locale = 'es'
-let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-let week = d.toLocaleDateString(locale, { weekday: 'long' })
-let date = d.toLocaleDateString(locale, {
-day: 'numeric',
-month: 'long',
-year: 'numeric'
-})
-let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
-day: 'numeric',
-month: 'long',
-year: 'numeric'
-}).format(d)
-let time = d.toLocaleTimeString(locale, {
-hour: 'numeric',
-minute: 'numeric',
-second: 'numeric'
-})
-let _uptime = process.uptime() * 1000
-let _muptime
-if (process.send) {
-process.send('uptime')
-_muptime = await new Promise(resolve => {
-process.once('message', resolve)
-setTimeout(resolve, 1000)
-}) * 1000
-}
-let muptime = clockString(_muptime)
-let uptime = clockString(_uptime)
-let totalreg = Object.keys(global.db.data.users).length
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
-let replace = {
-'%': '%',
-p: _p, uptime, muptime,
-me: conn.getName(conn.user.jid),
-npmname: _package.name,
-npmdesc: _package.description,
-version: _package.version,
-exp: exp - min,
-maxexp: xp,
-totalexp: exp,
-xp4levelup: max - exp,
-github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
-level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
-readmore: readMore
-}
-text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
- 
-    
-
-let str = `
-*ミ💖 𝙷𝙾𝙻𝙰 ✨${name}✨, 𝙰𝚀𝚄𝙸 𝙴𝚂𝚃𝙰 𝙴𝙻 𝙼𝙴𝙽𝚄 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙾 𝙳𝙴 𝚃𝙷𝙴 𝙼𝚈𝚂𝚃𝙸𝙲 - 𝙱𝙾𝚃 💖彡*
-
-*📅 𝙵𝙴𝙲𝙷𝙰: ${week}, ${date}*
-*📈 𝚃𝙸𝙴𝙼𝙿𝙾 𝙰𝙲𝚃𝙸𝚅𝙾: ${uptime}*
-*📊 𝚄𝚂𝚄𝙰𝚁𝙸𝙾𝚂: ${rtotalreg}*
-
-
-*<𝔾ℝ𝕌ℙ𝕆𝕊/>* 
-
-° ඬ⃟💎 _${usedPrefix}add *<numero>*_
-° ඬ⃟💎 _${usedPrefix}kick *<@tag>*_
-° ඬ⃟💎 _${usedPrefix}grupo *<abrir / cerrar>*_
-° ඬ⃟💎 _${usedPrefix}promote *<@tag>*_
-° ඬ⃟💎 _${usedPrefix}demote *<@tag>*_
-° ඬ⃟💎 _admins *<texto>*_ (𝑢𝑠𝑜 𝑠𝑖𝑛 𝑝𝑟𝑒𝑓𝑖𝑗𝑜)
-° ඬ⃟💎 _${usedPrefix}demote *<@tag>*_
-° ඬ⃟💎 _${usedPrefix}infogroup_
-° ඬ⃟💎 _${usedPrefix}link_
-° ඬ⃟💎 _${usedPrefix}setname *<texto>*_
-° ඬ⃟💎 _${usedPrefix}setdesc *<texto>*_
-° ඬ⃟💎 _${usedPrefix}invocar *<texto>*_
-° ඬ⃟💎 _${usedPrefix}setwelcome *<texto>*_
-° ඬ⃟💎 _${usedPrefix}setbye *<texto>*_
-° ඬ⃟💎 _${usedPrefix}hidetag *<texto>*_
-° ඬ⃟💎 _${usedPrefix}fantasmas_
-
-*<𝕊𝕋𝕀ℂ𝕂𝔼ℝ𝕊/>*
-
-° ඬ⃟👽 _${usedPrefix}sticker *<responder a imagen o video>*_
-° ඬ⃟👽 _${usedPrefix}sticker *<enlace / link / url>*_
-° ඬ⃟👽 _${usedPrefix}s *<responder a imagen o video>*_
-° ඬ⃟👽 _${usedPrefix}s *<enlace / link / url>*_
-° ඬ⃟👽 _${usedPrefix}emojimix *<emoji 1>&<emoji 2>*_
-° ඬ⃟👽 _${usedPrefix}scircle *<responder a imagen>*_
-° ඬ⃟👽 _${usedPrefix}sremovebg *<responder a imagen>*_
-° ඬ⃟👽 _${usedPrefix}semoji *<tipo> <emoji>*_
-° ඬ⃟👽 _${usedPrefix}attp *<texto>*_
-° ඬ⃟👽 _${usedPrefix}attp2 *<texto>*_
-° ඬ⃟👽 _${usedPrefix}attp3 *<texto>*_
-° ඬ⃟👽 _${usedPrefix}ttp *<texto>*_
-° ඬ⃟👽 _${usedPrefix}ttp2 *<texto>*_
-° ඬ⃟👽 _${usedPrefix}ttp3 *<texto>*_
-° ඬ⃟👽 _${usedPrefix}ttp4 *<texto>*_
-° ඬ⃟👽 _${usedPrefix}ttp5 *<texto>*_
-° ඬ⃟👽 _${usedPrefix}pat *<@tag>*_
-° ඬ⃟👽 _${usedPrefix}slap *<@tag>*_
-° ඬ⃟👽 _${usedPrefix}kiss *<@tag>*_
-° ඬ⃟👽 _${usedPrefix}dado_
-° ඬ⃟👽 _${usedPrefix}wm *<packname> <author>*_
-° ඬ⃟👽 _${usedPrefix}stickermarker *<efecto> <responder a imagen>*_
-° ඬ⃟👽 _${usedPrefix}stickerfilter *<efecto> <responder a imagen>*_
-
-*<𝕆𝕎ℕ𝔼ℝ 𝕐 𝕄𝕆𝔻𝔼ℝ𝔸𝔻𝕆ℝ𝔼𝕊/>*
-
-° ඬ⃟👑 _${usedPrefix}cajafuerte_
-° ඬ⃟👑 _${usedPrefix}enable *restrict*_
-° ඬ⃟👑 _${usedPrefix}disable *restrict*_
-° ඬ⃟👑 _${usedPrefix}enable *autoread*_
-° ඬ⃟👑 _${usedPrefix}disable *autoread*_
-° ඬ⃟👑 _${usedPrefix}enable *public*_
-° ඬ⃟👑 _${usedPrefix}disable *public*_
-° ඬ⃟👑 _${usedPrefix}enable *pconly*_
-° ඬ⃟👑 _${usedPrefix}disable *pconly*_
-° ඬ⃟👑 _${usedPrefix}enable *gconly*_
-° ඬ⃟👑 _${usedPrefix}disable *gconly*_
-° ඬ⃟👑 _${usedPrefix}enable *anticall*_
-° ඬ⃟👑 _${usedPrefix}disable *anticall*_
-° ඬ⃟👑 _${usedPrefix}enable *antiprivado*_
-° ඬ⃟👑 _${usedPrefix}disable *antiprivado*_
-° ඬ⃟👑 _${usedPrefix}msg *<texto>*_
-° ඬ⃟👑 _${usedPrefix}banchat_
-° ඬ⃟👑 _${usedPrefix}unbanchat_
-° ඬ⃟👑 _${usedPrefix}banuser *<@tag>*_
-° ඬ⃟👑 _${usedPrefix}unbanuser *<@tag>*_
-° ඬ⃟👑 _${usedPrefix}banuser *<@tag>*_
-° ඬ⃟👑 _${usedPrefix}bc *<texto>*_
-° ඬ⃟👑 _${usedPrefix}bcchats *<texto>*_
-° ඬ⃟👑 _${usedPrefix}bcgc *<texto>*_
-° ඬ⃟👑 _${usedPrefix}cleartpm_
-° ඬ⃟👑 _${usedPrefix}restart_
-° ඬ⃟👑 _${usedPrefix}update_
-° ඬ⃟👑 _${usedPrefix}addprem *<@tag>*_
-° ඬ⃟👑 _${usedPrefix}delprem *<@tag>*_
-° ඬ⃟👑 _${usedPrefix}listprem_
-`.trim()
-conn.sendHydrated2(m.chat, str, wm, pp, 'https://www.paypal.me/TheShadowBrokers133', '', 'https://github.com/BrunoSobrino/TheMystic-Bot-MD', '𝙶𝙸𝚃𝙷𝚄𝙱', [
-['CREADOR', '/creador'],
-['TIKTOK', '/CuentaDeTikTok'],
-['INFO BOT', '/infobot']
-], m,)
-//await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, {
-//type: 'audioMessage', 
-//ptt: true})
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+try {
 } catch (e) {
-conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] 𝙴𝙻 𝙼𝙴𝙽𝚄 𝚃𝙸𝙴𝙽𝙴 𝚄𝙽 𝙴𝚁𝚁𝙾𝚁 𝚈 𝙽𝙾 𝙵𝚄𝙴 𝙿𝙾𝚂𝙸𝙱𝙻𝙴 𝙴𝙽𝚅𝙸𝙰𝚁𝙻𝙾, 𝚁𝙴𝙿𝙾𝚁𝚃𝙴𝙻𝙾 𝙰𝙻 𝙿𝚁𝙾𝙿𝙸𝙴𝚃𝙰𝚁𝙸𝙾 𝙳𝙴𝙻 𝙱𝙾𝚃*', m)
-throw e
+} finally {
+let { name, limit, exp, banned, lastclaim, registered, regTime, age, level } = global.db.data.users[m.sender]
+let { min, xp, max } = levelling.xpRange(level, global.multiplier)
+let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
+let username = conn.getName(who)
+let menu = `
+╭══〘 ✯✯✯✯✯✯✯✯ 〙═╮
+║≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+║➤ *✨𝗛ola, ${taguser} :D*
+║≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+╰══╡✯✯✯✯✯✯✯✯╞══╯
+┏━━━━━━━━━━━━━┓
+┃ *< COMANDOS >*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+┣ ඬ⃟💫 _a_
+┣ ඬ⃟💫 _${usedPrefix}cat_
+┣ ඬ⃟💫 _${usedPrefix}dog_
+┣ ඬ⃟💫 _${usedPrefix}meme_
+┣ ඬ⃟💫 _${usedPrefix}logos_
+┣ ඬ⃟💫 _${usedPrefix}runtime_
+┣ ඬ⃟💫 _${usedPrefix}infohost_
+┣ ඬ⃟💫 _${usedPrefix}on welcome_
+┣ ඬ⃟💫 _${usedPrefix}off welcome_
+┣ ඬ⃟💫 _${usedPrefix}mediafire *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}tiktok *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}sticker *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}attp *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}attp2 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}attp3 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}ttp *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}ttp2 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}ttp3 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}ttp4 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}ttp5 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}wikipedia *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}google *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}imagen *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}play *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}play2 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}play3 *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}invocar *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}ytsearch *[texto]*_
+┣ ඬ⃟💫 _${usedPrefix}getaud *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}getvid *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}ytmp3 *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}ytmp4 *[url]*_
+┣ ඬ⃟💫 _${usedPrefix}tts *[lenguaje] [texto]*_
+┣ ඬ⃟💫 _${usedPrefix}toimg *[sticker]*_
+┣ ඬ⃟💫 _${usedPrefix}sticker *[imagen]*_
+┣ ඬ⃟💫 _${usedPrefix}tourl *[imagen]*_
+┣ ඬ⃟💫 _${usedPrefix}tourl *[video]*_
+┣ ඬ⃟💫 _${usedPrefix}tourl *[audio]*_
+┣ ඬ⃟💫 _${usedPrefix}fat *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}bass *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}blown *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}deep *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}fast *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}robot *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}slow *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}tupai *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}vibra *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}nightcore *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}earrape *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}reverse *[nota de voz]*_
+┣ ඬ⃟💫 _${usedPrefix}smooth *[nota de voz]*_
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+┃ *< OWNER >*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+┣ ඬ⃟💫 _${usedPrefix}update_
+┗━━━━━━━━━━━━━┛
+`.trim()
+//let mentionedJid = [who]
+let buttons = [
+{ buttonId: '#owner', buttonText: { displayText: '💫 𝐎𝐖𝐍𝐄𝐑 💫' }, type: 1 },
+{ buttonId: '#runtime', buttonText: { displayText: '⏰ 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 ⏰' }, type: 1 },
+{ buttonId: '#infohost', buttonText: { displayText: '👑 𝐈𝐍𝐅𝐎𝐇𝐎𝐒𝐓 👑' }, type: 1 }]
+let buttonMessage = {
+image: fs.readFileSync('./Menu2.jpg'),
+caption: menu.trim(),
+mentions: [m.sender],
+footer: `*${wm}*`,
+buttons: buttons,
+headerType: 4,
+contextInfo: {
+mentionedJid: [m.sender],
+externalAdReply: {
+showAdAttribution: true,
+mediaType: 'VIDEO',
+mediaUrl: null,
+title: '👑 𝐀𝐜𝐢𝐝𝐢𝐜𝐍𝐨𝐝𝐞𝐬 𝐇𝐨𝐬𝐭 👑',
+body: null,
+thumbnail: fs.readFileSync('./src/logo.png'),
+sourceUrl: `https://chat.whatsapp.com/F0fU7LSlBBcBm6ny5fVSuT`
+}}}
+conn.sendMessage(m.chat, buttonMessage, { quoted: m })
 }}
-handler.command = /^(menu|menú|memu|memú|help|info|comandos|allmenu|2help|menu1.2|ayuda|commands|commandos|cmd)$/i
-handler.exp = 50
+handler.help = ['menu', 'help', '?']
+handler.tags = ['general']
+handler.command = /^(menucompleto|comandos|allmenu|info|speed|estado|menú|menu|help|\?)$/i
 handler.fail = null
-export default handler
-
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
-function clockString(ms) {
-let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
+module.exports = handler
