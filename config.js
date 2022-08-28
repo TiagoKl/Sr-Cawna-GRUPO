@@ -6,7 +6,6 @@ import { watchFile, unwatchFile } from 'fs'
   
  global.owner = [ 
    ['51946352266', '𝙎𝙧 𝘾𝙖𝙬𝙣𝙖 𝘾𝙧𝙚𝙖𝙙𝙤𝙧 𝙊𝙛𝙞𝙘𝙞𝙖𝙡', true], 
-   ['522711229747', 'prueba', true], 
  ] // Cambia los numeros que quieras 
  global.suittag = ['51946352266']  
  global.mods = []  
