@@ -117,6 +117,6 @@ sourceUrl: `https://chat.whatsapp.com/Dbw92638r4zGsRnUcoAbeU`
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 handler.command = /^(menucompleto|comandos|allmenu|info|speed|estado|menú|menu|help|\?)$/i
-handler.admin = true
+handler.admin = false
 handler.fail = null
 export default handler
