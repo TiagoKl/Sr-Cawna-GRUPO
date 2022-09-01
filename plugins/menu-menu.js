@@ -3,28 +3,11 @@ let handler = async (m, { conn, usedPrefix }) => {
 let pp = './Menu2.jpg'
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let menu = `
- ${taguser} 
+◌ » —𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死— « ◌
 
-◌ » ———— ╫ ❲ ❈ ❳ ╫ ———— « ◌
-      𝐂𝐎𝐌𝐀𝐍𝐃𝐎𝐒 𝐏𝐀𝐑𝐀 𝐆𝐑𝐔𝐏𝐎𝐒
-
-⚙️ _${usedPrefix}add *<numero>*_ 
- ⚙️ _${usedPrefix}kick *<@tag>*_ 
- ⚙️ _${usedPrefix}grupo *<abrir / cerrar>*_ 
- ⚙️ _${usedPrefix}promote *<@tag>*_ 
- ⚙️ _${usedPrefix}demote *<@tag>*_ 
- ⚙️ _admins *<texto>*_ (Uso sin prefijo) 
- ⚙️ _${usedPrefix}demote *<@tag>*_ 
- ⚙️ _${usedPrefix}infogroup_ 
- ⚙️ _${usedPrefix}link_ 
- ⚙️ _${usedPrefix}setname *<texto>*_ 
- ⚙️ _${usedPrefix}setdesc *<texto>*_ 
- ⚙️ _${usedPrefix}invocar *<texto>*_ 
- ⚙️ _${usedPrefix}setwelcome *<texto>*_ 
- ⚙️ _${usedPrefix}setbye *<texto>*_ 
- ⚙️ _${usedPrefix}hidetag *<texto>*_ 
- ⚙️ _${usedPrefix}fantasmas_
-◌ » ———— ╫ ❲ ❈ ❳ ╫ ———— « ◌
+°Hola ${taguser}  Bienvenida (o) 
+*El BOT está en modo desarrollo, todavía nos falta agregar muchas cosas, poco a poco el bot se va actualizar, aceptamos cualquier tipo de sugerencia respecto al bot.*
+◌ » ———— ╫ ❲ ❈ ❳ ╫ ———— « ◌
 
 `.trim()
 let buttons = [
