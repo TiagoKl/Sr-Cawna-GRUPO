@@ -40,11 +40,11 @@ import fs from 'fs'
  title: '𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死', 
  body: null, 
  thumbnail: fs.readFileSync('./src/logo.png'), 
- sourceUrl: `https://chat.whatsapp.com/Dbw92638r4zGsRnUcoAbeU` 
+ sourceUrl: `https://chat.whatsapp.com/I8BVNN5eExh60hMiSLDO09` 
  }}} 
  conn.sendMessage(m.chat, buttonMessage, { quoted: m }) 
  } 
- handler.command = /^(menugrupo|\?)$/i 
+ handler.command = /^(Comandos|COMANDOS)$/i 
  handler.admin = false 
  handler.fail = null 
  export default handler
