@@ -137,7 +137,7 @@ conn.ev.off('connection.update', conn.connectionUpdate)
 conn.ev.off('creds.update', conn.credsUpdate)
 }
   
-conn.welcome = '...........Prueba'
+conn.welcome = '_@user_ _*Bienvenido (a)*_\n\n_Te saluda *Sr Cawna-Bot*, una inteligencia artificial, creado por Tiago._\n\n_Lee las reglas del grupo para evitar sanciones más adelante_\n\n_Respeta a los administradores como a los usuarios presentes_\n\n𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死'
 conn.bye = '.........Prueba'
 conn.spromote = '*@user 𝚂𝙴 𝚂𝚄𝙼𝙰 𝙰𝙻 𝙶𝚁𝚄𝙿𝙾 𝙳𝙴 𝙰𝙳𝙼𝙸𝙽𝚂!!*'
 conn.sdemote = '*@user 𝙰𝙱𝙰𝙽𝙳𝙾𝙽𝙰 𝙴𝙻 𝙶𝚁𝚄𝙿𝙾 𝙳𝙴 𝙰𝙳𝙼𝙸𝙽𝚂 !!*'
