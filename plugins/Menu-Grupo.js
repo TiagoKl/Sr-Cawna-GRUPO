@@ -26,7 +26,7 @@ import fs from 'fs'
  let buttons = [ 
  { buttonId: 'uuu', buttonText: { displayText: '🩸𝐋𝐈𝐒𝐓𝐀 𝐃𝐄 𝐂𝐎𝐌𝐀𝐍𝐃𝐎𝐒🩸' }, type: 1 }] 
  let buttonMessage = { 
- image: fs.readFileSync('./grupo.jpg'), 
+ image: fs.readFileSync('./src/grupo.jpg'), 
  caption: menu.trim(), 
  mentions: [m.sender], 
  footer: `*${wm}*`, 
