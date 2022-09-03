@@ -3,24 +3,23 @@ import fs from 'fs'
  let pp = './src/grupo.jpg' 
  let taguser = '@' + m.sender.split("@s.whatsapp.net")[0] 
  let menu = ` 
-  ┏•【*COMANDOS PARA GRUPOS*】•
-  │➼•  ${taguser} 
-  │➼•  _${usedPrefix}add *<numero>*_  
-  │➼•  _${usedPrefix}kick *<@Mención>*_  
-  │➼•  _${usedPrefix}grupo *<abrir / cerrar>*_  
-  │➼•  _${usedPrefix}promote *<@Mención>*_  
-  │➼•  _${usedPrefix}demote *<@mención>*_  
-  │➼•  _admins *<texto>*
-  │➼•  _${usedPrefix}demote *<@mencion>*_  
-  │➼•  _${usedPrefix}infogroup_  
-  │➼•  _${usedPrefix}link_  
-  │➼•  _${usedPrefix}setname *<texto>*_  
-  │➼•  _${usedPrefix}setdesc *<texto>*_  
-  │➼•  _${usedPrefix}invocar *<texto>*_  
-  │➼•  _${usedPrefix}setwelcome *<texto>*_  
-  │➼•  _${usedPrefix}setbye *<texto>*_  
-  │➼•  _${usedPrefix}hidetag *<texto>*_  
-  │➼•  _${usedPrefix}fantasmas_
+  ┏•【 *COMANDOS PARA GRUPOS* 】•
+  │➼•   _${usedPrefix}add  *<numero>*_  
+  │➼•   _${usedPrefix}kick  *<@Mención>*_  
+  │➼•   _${usedPrefix}grupo  *<abrir / cerrar>*_  
+  │➼•   _${usedPrefix}promote  *<@Mención>*_  
+  │➼•   _${usedPrefix}demote  *<@mención>*_  
+  │➼•  _admins *<texto>*_
+  │➼•   _${usedPrefix}demote  *<@mencion>*_  
+  │➼•   _${usedPrefix}infogroup_  
+  │➼•   _${usedPrefix}link_  
+  │➼•   _${usedPrefix}setname  *<texto>*_  
+  │➼•   _${usedPrefix}setdesc  *<texto>*_  
+  │➼•   _${usedPrefix}invocar  *<texto>*_  
+  │➼•   _${usedPrefix}setwelcome  *<texto>*_  
+  │➼•   _${usedPrefix}setbye  *<texto>*_  
+  │➼•   _${usedPrefix}hidetag  *<texto>*_  
+  │➼•   _${usedPrefix}fantasmas_
   ┗───── • ─────• 
  `.trim() 
  let buttons = [ 
