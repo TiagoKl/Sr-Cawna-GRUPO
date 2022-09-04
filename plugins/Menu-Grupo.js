@@ -9,17 +9,17 @@ import fs from 'fs'
 °   _${usedPrefix}grupo  *<abrir / cerrar>*_ 
 °   _${usedPrefix}promote  *<@tag>*_ 
 °   _${usedPrefix}demote  *<@tag>*_ 
- °   _admins  *<texto>*_ 
- °   _${usedPrefix}demote  *<@tag>*_ 
- °   _${usedPrefix}infogroup_ 
- °   _${usedPrefix}link_ 
- °   _${usedPrefix}setname  *<texto>*_ 
- °   _${usedPrefix}setdesc  *<texto>*_ 
- °   _${usedPrefix}invocar  *<texto>*_ 
- °   _${usedPrefix}setwelcome  *<texto>*_ 
- °   _${usedPrefix}setbye  *<texto>*_ 
- °   _${usedPrefix}hidetag  *<texto>*_ 
- °   _${usedPrefix}fantasmas_
+°   _admins  *<texto>*_ 
+°   _${usedPrefix}demote  *<@tag>*_ 
+°   _${usedPrefix}infogroup_ 
+°   _${usedPrefix}link_ 
+°   _${usedPrefix}setname  *<texto>*_ 
+°   _${usedPrefix}setdesc  *<texto>*_ 
+°   _${usedPrefix}invocar  *<texto>*_ 
+°   _${usedPrefix}setwelcome  *<texto>*_ 
+°   _${usedPrefix}setbye  *<texto>*_ 
+°   _${usedPrefix}hidetag  *<texto>*_ 
+°   _${usedPrefix}fantasmas_
 ┗───── • ─────• 
 ┏•【 *COMANDOS DE STICKERS* 】•
 °   _${usedPrefix}sticker  *<responder a imagen o video>*_ 
