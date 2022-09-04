@@ -44,7 +44,7 @@ import fs from 'fs'
  }}} 
  conn.sendMessage(m.chat, buttonMessage, { quoted: m }) 
  } 
- handler.command = /^(Comandos|COMANDOS)$/i 
+ handler.command = /^(CMDGRUPO|cmdgrupo)$/i 
  handler.admin = false 
  handler.fail = null 
  export default handler
