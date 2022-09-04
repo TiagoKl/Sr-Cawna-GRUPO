@@ -1,21 +1,49 @@
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => { 
- const sections = [ 
- { 
- title: `𝐋𝐈𝐒𝐓𝐀 𝐃𝐄 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒`, 
- rows: [ 
- {title: "✨ | 𝚆𝙴𝙻𝙲𝙾𝙼𝙴", description: "𝙰𝙲𝚃𝙸𝚅𝙰 𝙾 𝙳𝙴𝚂𝙰𝙲𝚃𝙸𝚅𝙰 𝙻𝙰 𝙱𝙸𝙴𝙽𝚅𝙴𝙽𝙸𝙳𝙰 𝙴𝙽 𝙴𝙻 𝙶𝚁𝚄𝙿𝙾", rowId: `${usedPrefix + command} welcome`}, 
- ]}, ] 
- let name = await conn.getName(m.sender) 
- const listMessage = { 
- text: ' ', 
- footer: `${name}!!* 
-
- ${author}`, 
- title: null, 
- buttonText: "𝐒𝐄𝐋𝐄𝐂𝐂𝐈𝐎𝐍𝐄 𝐀𝐐𝐔𝐢", 
- sections } 
- 
- handler.help = ['en', 'dis'].map(v => v + 'able <option>') 
- handler.tags = ['group', 'owner'] 
- handler.command = /^(menucompleto|menu|help|menú|\?)$/i
- export default handler
+import fs from 'fs'  
+  let handler = async (m, { conn, usedPrefix }) => {  
+  let pp = './src/grupo.jpg'  
+  let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]  
+  let menu = `  
+╭───────────•
+│❝𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死❞
+│• Creador: Tiago
+│• Número: +51 946 352 266
+│• Instagram: cawna.sex
+│• TikTok: cawna.sex
+│
+│|• BOT DE WHATSAPP•|
+╰───────────────•
+╭┈ ↷
+│ |•|LISTA DISPONIBLES|•|
+│ 
+│• ${usedPrefix}CMDGRUPO
+│• ${usedPrefix}CMDSTICKER
+│• ${usedPrefix}CMDDESCARGAS
+│ 
+╰──────────────•
+  `.trim()  
+  let buttons = [  
+  { buttonId: 'uuu', buttonText: { displayText: '𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死' }, type: 1 }]  
+  let buttonMessage = {  
+  image: fs.readFileSync('./src/grupo.jpg'),  
+  caption: menu.trim(),  
+  mentions: [m.sender],  
+  footer: `*${wm}*`,  
+  buttons: buttons,  
+  headerType: 4,  
+  contextInfo: {  
+  mentionedJid: [m.sender],  
+  externalAdReply: {  
+  showAdAttribution: true,  
+  mediaType: 'VIDEO',  
+  mediaUrl: null,  
+  title: '𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死',  
+  body: null,  
+  thumbnail: fs.readFileSync('./src/logo.png'),  
+  sourceUrl: `https://chat.whatsapp.com/I8BVNN5eExh60hMiSLDO09`  
+  }}}  
+  conn.sendMessage(m.chat, buttonMessage, { quoted: m })  
+  }  
+  handler.command = /^(Comandos|COMANDOS)$/i  
+  handler.admin = false  
+  handler.fail = null  
+  export default handler
