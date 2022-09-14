@@ -23,7 +23,7 @@ import fs from 'fs'
 ╰───────────────•
  `.trim() 
  let buttons = [ 
- { buttonId: 'uuu', buttonText: { displayText: '🩸ᴇɴʟᴀᴄᴇ ᴅᴇʟ ɢʀᴜᴘᴏ🩸' }, type: 1 }] 
+ { buttonId: '#link', buttonText: { displayText: '🩸 ENLACE DEL GRUPO 🩸' }, type: 1 }] 
  let buttonMessage = { 
  image: fs.readFileSync('./src/grupo.jpg'), 
  caption: menu.trim(), 
@@ -37,7 +37,7 @@ import fs from 'fs'
  showAdAttribution: true, 
  mediaType: 'VIDEO', 
  mediaUrl: null, 
- title: '📝COMANDOS PARA GRUPOS📝', 
+ title: '📝 COMANDOS PARA EL GRUPO 📝', 
  body: null, 
  thumbnail: fs.readFileSync('./src/logo.png'), 
  sourceUrl: `https://chat.whatsapp.com/I8BVNN5eExh60hMiSLDO09` 
