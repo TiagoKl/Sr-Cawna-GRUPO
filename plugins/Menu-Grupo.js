@@ -3,6 +3,8 @@ import fs from 'fs'
  let pp = './src/grupo.jpg' 
  let taguser = '@' + m.sender.split("@s.whatsapp.net")[0] 
  let menu = ` 
+
+📬 ❯  COMANDOS PARA GRUPOS ;;  死
 ╭┈ ↷
 │ ┆ ${usedPrefix}add  <numero>
 │ ┆ ${usedPrefix}kick  <@tag>
@@ -20,6 +22,10 @@ import fs from 'fs'
 │ ┆ ${usedPrefix}setbye  <texto>
 │ ┆ ${usedPrefix}hidetag  <texto>
 │ ┆ ${usedPrefix}fantasmas
+╰───────────────•
+📝 ❯  COMANDOS DE STICKERS ;;  死
+╭┈ ↷
+│ ┆ ${usedPrefix}add  <numero>
 ╰───────────────•
  `.trim() 
  let buttons = [ 
