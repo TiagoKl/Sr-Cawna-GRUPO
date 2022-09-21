@@ -46,11 +46,11 @@ import fs from 'fs'
  title: '𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死', 
  body: null, 
  thumbnail: fs.readFileSync('./src/logo.png'), 
- sourceUrl: `tiktok.com/@cawna.sex` 
+ sourceUrl: `http://tiktok.com/@cawna.sex` 
  }}} 
  conn.sendMessage(m.chat, buttonMessage, { quoted: m }) 
  } 
- handler.command = /^(CMDGRUPO|cmdgrupo)$/i 
+ handler.command = /^(menu|comandos)$/i 
  handler.admin = false 
  handler.fail = null 
  export default handler
