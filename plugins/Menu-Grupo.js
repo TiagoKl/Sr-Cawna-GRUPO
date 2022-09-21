@@ -37,10 +37,10 @@ import fs from 'fs'
  showAdAttribution: true, 
  mediaType: 'VIDEO', 
  mediaUrl: null, 
- title: '📝 COMANDOS PARA EL GRUPO 📝', 
+ title: '𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死', 
  body: null, 
  thumbnail: fs.readFileSync('./src/logo.png'), 
- sourceUrl: `https://chat.whatsapp.com/I8BVNN5eExh60hMiSLDO09` 
+ sourceUrl: `tiktok.com/@cawna.sex` 
  }}} 
  conn.sendMessage(m.chat, buttonMessage, { quoted: m }) 
  } 
