@@ -16,12 +16,19 @@ Quieres preguntar algo o tienes alguna sugerencia respecto al bot, no dudes en c
 
 Cualquier información o fotos privadas que envíes al bot, no será compartido a terceros, el bot hace limpieza de chat cada 24 horas, que quiere decir que todo lo que envíes es sumamente eliminado. Pasando las 24 horas.
 
+🚨UNE AL BOT A TU GRUPO🚨
 
-Número de mi creador.
+QUIERES TENER AL BOT EN TU GRUPO, SOLICITA TU PEDIDO, TE PREGUNTARÁS ¿CÓMO? SÓLO ENVIA EL COMANDO "#join LINK DEL GRUPO"
+
+EJEMPLO: 
+     
+   #join https://chat.whatsapp.com/I8BVNN5eExh60hMiSLDO09
+
+
+🔥Número de mi creador🔥
+
 wa.me//51946352266
-
 "Puede que demore en responder"
-
 
 Toda consulta o sugerencia, trata con respeto.`
 if (new Date - user.pc < 86400000) return 
