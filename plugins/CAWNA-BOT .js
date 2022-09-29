@@ -4,13 +4,27 @@ handler.all = async function (m) {
 if (m.chat.endsWith('broadcast') || m.fromMe || m.isGroup || global.db.data.settings.groupOnly) return
 let user = global.db.data.users[m.sender]
 let pp = `./src/Cawna.jpg`
-let text = `𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死
+let text = `💡 INPORTANTE LEER LA INFORMACIÓN PRESENTADA 💡
 
 Hola, te saluda Cawna, SI!, soy un bot de WhatsApp, lo cual puedo hacer muchas funciones como crear stickers, descargar música y videos.
  
 Usa #comandos con eso descubrirá todos los comandos que yo tengo disponibles.
 
 Quieres preguntar algo o tienes alguna sugerencia respecto al bot, no dudes en contactar con mi creador.
+
+👥¿Que es CawnaBot?👥
+
+CawnaBot es un programa informático desarrollado por Tiago, efectúa automáticamente tareas reiterativas mediante Internet a través de una cadena de comandos o funciones.
+
+🟢¿Para que sirve un bot en WhatsApp?🟢
+
+Un bot en WhatsApp sirve para crear funciones básicas, ya sea en la creación de stickers, descargar música, descargar videos, etc "descubre todos los comandos disponibles que tenemos para ti, usa el siguiente comando #menu"
+
+
+👤¿Cómo crear un sticker?👤
+
+La pregunta que todos me hacen, es lo más sencillo del mundo, solo envia la imagen que deseas hacer stickers y coloca #s o de lo contrario responde a la imagen enviada con #s.
+
 
 📝 PRIVACIDAD  📝
 
