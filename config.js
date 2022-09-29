@@ -66,7 +66,8 @@ import { watchFile, unwatchFile } from 'fs'
  // Sticker WM 
  global.packname = '' 
  global.author = '𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死\n\n     ᴄᴏɴᴛᴀᴄᴛᴏ ᴅᴇ ᴡʜᴀᴛꜱᴀᴘᴘ\n               +51 946 352 266\n\n\n           ©ɴᴏ ᴄᴏᴘʏʀɪɢʜᴛ' 
- global.tiago = '      ©     𝖯𝖱𝗢𝗚𝙍꯭Ꜳ𝗠𝖬Σ𝖱' 
+ global.tiago = '      ©     𝖯𝖱𝗢𝗚𝙍꯭Ꜳ𝗠𝖬Ꜳ𝗗𝗢𝙍꯭ ' 
+ global.cawna = '⚠️ ENLACE DETECTADO ⚠️' 
 
 
  global.wm = '『卍』 𝙎𝙧 𝘾𝙖𝙬𝙣𝙖 𝘽𝙤𝙩 🍷' 
