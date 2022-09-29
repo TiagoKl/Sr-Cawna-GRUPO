@@ -46,7 +46,7 @@ wa.me//51946352266
 
 Toda consulta o sugerencia, trata con respeto.`
 if (new Date - user.pc < 86400000) return 
-await this.sendButton(m.chat, `${text}`, wm, pp, [['MENÚ PRINCIPAL', `#menu`]], m) 
+await this.sendButton(m.chat, `${text}`, wm, pp, [['📛REDES SOCIALES📛', `#REDES`]], m) 
 user.pc = new Date * 1} 
 
 export default handler
