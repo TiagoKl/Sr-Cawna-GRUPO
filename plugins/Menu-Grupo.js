@@ -8,7 +8,7 @@ import fs from 'fs' 
  👾 ❯  COMANDOS CONVERTIDORES;;  死  
  ╭┈ ↷  
  │ ┆ ${usedPrefix}mp4 <responde aún sticker gif>
- │ ┆ ${usedPrefix}mp3 <responde audio,vídeo>
+ │ ┆ ${usedPrefix}tomp3 <responde audio,vídeo>
  │ ┆ ${usedPrefix}ptt <convierte un MP3 a audio>
  │ ┆ ${usedPrefix}tourl <imagen, vídeo se convertirá en un link>
  │ ┆ ${usedPrefix}tts <crea audios>
