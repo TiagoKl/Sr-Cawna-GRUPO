@@ -4,6 +4,16 @@ import fs from 'fs' 
   let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]  
   let menu = `  
   
+
+ 👾 ❯  COMANDOS CONVERTIDORES;;  死  
+ ╭┈ ↷  
+ │ ┆ ${usedPrefix}mp4 <responde aún sticker gif>
+ │ ┆ ${usedPrefix}mp3 <responde audio,vídeo>
+ │ ┆ ${usedPrefix}ptt <convierte un MP3 a audio>
+ │ ┆ ${usedPrefix}tourl <imagen, vídeo se convertirá en un link>
+ │ ┆ ${usedPrefix}tts <crea audios>
+ │ ┆ ${usedPrefix}togifaud <selecciona un vídeo y convierte el vídeo en gif con audio>
+ ╰───────────────• 
  📬 ❯  COMANDOS PARA GRUPOS ;;  死 
  ╭┈ ↷ 
  │ ┆ ${usedPrefix}add  <numero> 
