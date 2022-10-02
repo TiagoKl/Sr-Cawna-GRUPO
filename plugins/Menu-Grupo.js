@@ -3,8 +3,19 @@ import fs from 'fs' 
   let pp = './src/grupo.jpg'  
   let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]  
   let menu = `  
-  
 
+ 👾 ❯ COMANDOS DE  DIVERSIÓN;;  死   
+  ╭┈ ↷   
+  │ ┆ ${usedPrefix}reto
+  │ ┆ ${usedPrefix}verdad
+  │ ┆ ${usedPrefix}formarpareja5
+  │ ┆ ${usedPrefix}cawna
+  │ ┆ ${usedPrefix}formarpareja
+  │ ┆ ${usedPrefix}love <@tag>
+  │ ┆ ${usedPrefix}consejo
+  │ ┆ ${usedPrefix}fraseromantica
+  │ ┆ ${usedPrefix}historiaromantica
+  ╰───────────────• 
  👾 ❯  COMANDOS CONVERTIDORES;;  死  
  ╭┈ ↷  
  │ ┆ ${usedPrefix}mp4 <responde aún sticker gif>
