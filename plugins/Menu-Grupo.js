@@ -10,6 +10,7 @@ import fs from 'fs' 
   │ ┆ ${usedPrefix}verdad
   │ ┆ ${usedPrefix}formarpareja5
   │ ┆ ${usedPrefix}cawna
+  │ ┆ ${usedPrefix}amigorandom
   │ ┆ ${usedPrefix}formarpareja
   │ ┆ ${usedPrefix}love <@tag>
   │ ┆ ${usedPrefix}consejo
