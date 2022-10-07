@@ -13,9 +13,6 @@ import fs from 'fs' 
   │ ┆ ${usedPrefix}amigorandom
   │ ┆ ${usedPrefix}formarpareja
   │ ┆ ${usedPrefix}love <@tag>
-  │ ┆ ${usedPrefix}consejo
-  │ ┆ ${usedPrefix}fraseromantica
-  │ ┆ ${usedPrefix}historiaromantica
   ╰───────────────• 
  👾 ❯  COMANDOS CONVERTIDORES;;  死  
  ╭┈ ↷  
