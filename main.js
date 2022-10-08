@@ -137,7 +137,7 @@ conn.ev.off('connection.update', conn.connectionUpdate)
 conn.ev.off('creds.update', conn.credsUpdate)
 }
   
-conn.welcome = '_@user_ _*Bienvenido (a)*_\n\n_Te saluda *Sr Cawna-Bot*, una inteligencia artificial, creado por Tiago._\n\n𝗡𝗢 𝗠𝗘 𝗕𝗨𝗦𝗤𝗨𝗘𝗡 𝗣𝗥𝗢𝗕𝗟𝗘𝗠𝗔𝗦, 𝗤𝗨𝗘 𝗟𝗨𝗘𝗚𝗢 𝗦𝗔𝗟𝗘𝗡 𝗟𝗟𝗢𝗥𝗔𝗡𝗗𝗢.\n\n_Lee las reglas del grupo para evitar sanciones más adelante_\n\n_Respeta a los administradores como a los usuarios presentes_\n\n𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死'
+conn.welcome = '. .⌲⿻ 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐀 𝐀𝐔𝐓𝐎𝐌Á𝐓𝐈𝐂𝐀 . . .\n\n @subject\n\n    •│ @user Bienvenido(a) , Que lindo que estás en este maravilloso grupo.\n\n\n   •  Me presentó para que me conozcas mejor.\n\n\nQuizás te preguntes "¿Quien vergas eres tú?", Pues ya que, yo soy una inteligencia artificial, osea un bot, puedo hacer muchas funciones como tareas ejecutados por comandos.\n\n\n•│!NO ME GUSTAN LOS ENLACES DE GRUPOS DE WHATSAPP¡ \n\nSi veo que mandas un enlace de WhatsApp te eliminaré automáticamente, sin reclamo a nada "si eres administrador (a), no te haré nada, Tú eres una persona con el mismo poder que tengo yo.\n\n. .⌲⿻ 𝘿𝙀𝙎𝘾𝙍𝙄𝙋𝘾𝙄Ó𝙉 𝘿𝙀𝙇 𝙂𝙍𝙐𝙋𝙊. . .\n\n @desc\n\n────── · · · · · ──────\n❐│ Creador: Tiago  \n      ©     𝖯𝖱𝗢𝗚𝙍꯭Ꜳ𝗠𝖬Σ𝖱\n────── · · · · · ──────'
 conn.bye = '_*@user, Adiós*_\n\n𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死'
 conn.spromote = '*@user 𝚂𝙴 𝚂𝚄𝙼𝙰 𝙰𝙻 𝙶𝚁𝚄𝙿𝙾 𝙳𝙴 𝙰𝙳𝙼𝙸𝙽𝚂!!*'
 conn.sdemote = '*@user 𝙰𝙱𝙰𝙽𝙳𝙾𝙽𝙰 𝙴𝙻 𝙶𝚁𝚄𝙿𝙾 𝙳𝙴 𝙰𝙳𝙼𝙸𝙽𝚂 !!*'
