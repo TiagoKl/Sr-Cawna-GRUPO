@@ -3,7 +3,7 @@ if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
 throw false
 }
-let pp = './src/invocar.jpg'  
+let pp = './src/Invocar.jpg'  
 let pesan = args.join` `
 let oi = `${pesan}`
 let teks = `░⃟ ⃟ ┊LISTA DE TODOS LOS USUARIOS₊˚.༄\n\n⊙ ${oi}\n\n𝐋𝐈𝐃𝚵𝐑 ː\n     𝕯̵͌͌ ❯  𝗦𝗿 𝗖𝗮𝘄𝗻𝗮🍷 ;;  死\n              𝚂𝙾𝚈 𝙴𝙻 𝙼𝙴𝙹𝙾𝚁 𝙱𝙾𝚃 𝙳𝙴 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿\n────── · · · · · ──────\n`
